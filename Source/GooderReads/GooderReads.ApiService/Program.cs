@@ -1,3 +1,6 @@
+using GooderReads.ApiService;
+using GooderReads.ApiService.Mutations;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire components.
@@ -5,6 +8,15 @@ builder.AddServiceDefaults();
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
+builder.AddSqlServerDbContext<GooderReadsContext>("GooderReadsSQL");
+
+builder.Services
+    .AddGraphQLServer()
+    .RegisterDbContext<GooderReadsContext>()
+    .AddQueryType<BooksQuery>()
+    .AddMutationType<BooksMutation>();
+
+builder.Services.AddHostedService<Migrator>();
 
 var app = builder.Build();
 
@@ -29,6 +41,8 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 });
 
+app.MapGraphQL();
+app.MapBananaCakePop();
 app.MapDefaultEndpoints();
 
 app.Run();
