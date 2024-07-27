@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GooderReads.AppHost", "GooderReads.AppHost\GooderReads.AppHost.csproj", "{1F5D4295-8D0D-41D8-87DE-E3D8E1BF388A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GooderReads.ServiceDefaults", "GooderReads.ServiceDefaults\GooderReads.ServiceDefaults.csproj", "{6E5D4C66-39BB-4A16-9CF5-72407EB535BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GooderReads.ApiService", "GooderReads.ApiService\GooderReads.ApiService.csproj", "{663F2212-8506-42FB-8A66-8FD0D5A0A4A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GooderReads.Web", "GooderReads.Web\GooderReads.Web.csproj", "{0515930B-041D-4FEF-BED2-C0F8A83D2E80}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GooderReads.Tests", "GooderReads.Tests\GooderReads.Tests.csproj", "{6A404179-38DF-4D9C-858B-CA3A76840E88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F5D4295-8D0D-41D8-87DE-E3D8E1BF388A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F5D4295-8D0D-41D8-87DE-E3D8E1BF388A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F5D4295-8D0D-41D8-87DE-E3D8E1BF388A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F5D4295-8D0D-41D8-87DE-E3D8E1BF388A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E5D4C66-39BB-4A16-9CF5-72407EB535BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5D4C66-39BB-4A16-9CF5-72407EB535BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5D4C66-39BB-4A16-9CF5-72407EB535BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5D4C66-39BB-4A16-9CF5-72407EB535BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{663F2212-8506-42FB-8A66-8FD0D5A0A4A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{663F2212-8506-42FB-8A66-8FD0D5A0A4A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{663F2212-8506-42FB-8A66-8FD0D5A0A4A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{663F2212-8506-42FB-8A66-8FD0D5A0A4A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0515930B-041D-4FEF-BED2-C0F8A83D2E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0515930B-041D-4FEF-BED2-C0F8A83D2E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0515930B-041D-4FEF-BED2-C0F8A83D2E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0515930B-041D-4FEF-BED2-C0F8A83D2E80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A404179-38DF-4D9C-858B-CA3A76840E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A404179-38DF-4D9C-858B-CA3A76840E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A404179-38DF-4D9C-858B-CA3A76840E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A404179-38DF-4D9C-858B-CA3A76840E88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {100BC0FF-599C-4FF6-9000-FC455D6120AD}
+	EndGlobalSection
+EndGlobal
