@@ -1,3 +1,6 @@
+using MongoDB.Bson;
+using MongoDB.Driver;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire components.
@@ -6,7 +9,17 @@ builder.AddServiceDefaults();
 // Add services to the container.
 builder.Services.AddProblemDetails();
 
+builder.AddMongoDBClient("test");
+
 var app = builder.Build();
+
+app.MapGet("/database", (IMongoDatabase mongoClient) =>
+{
+    var summaries = new BsonDocument();
+    summaries.Add("test", BsonValue.Create("value"));
+
+    mongoClient.GetCollection<BsonDocument>("testcollection").InsertOne(summaries);
+});
 
 // Configure the HTTP request pipeline.
 app.UseExceptionHandler();
