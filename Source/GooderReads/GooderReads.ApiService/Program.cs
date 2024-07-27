@@ -15,10 +15,19 @@ var app = builder.Build();
 
 app.MapGet("/database", (IMongoDatabase mongoClient) =>
 {
-    var summaries = new BsonDocument();
-    summaries.Add("test", BsonValue.Create("value"));
+    var summaries = new BsonDocument()
+        .Add("test key", BsonValue.Create("test value"));
 
-    mongoClient.GetCollection<BsonDocument>("testcollection").InsertOne(summaries);
+    try
+    {
+        mongoClient.GetCollection<BsonDocument>("testcollection").InsertOne(summaries);
+
+        return "Successfully inserted document";
+    }
+    catch (Exception ex)
+    {
+        return ex.Message;
+    }
 });
 
 // Configure the HTTP request pipeline.
