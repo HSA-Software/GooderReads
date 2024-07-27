@@ -2,14 +2,7 @@
 {
     public class BooksMutation
     {
-        private readonly GooderReadsContext gooderReadsContext;
-
-        public BooksMutation(GooderReadsContext gooderReadsContext)
-        {
-            this.gooderReadsContext = gooderReadsContext;
-        }
-
-        public async Task<Book> AddBook(Book book)
+        public async Task<Book> AddBook(Book book, GooderReadsContext gooderReadsContext)
         {
             book.Id = null;
             var result = await gooderReadsContext.Books.AddAsync(book);
