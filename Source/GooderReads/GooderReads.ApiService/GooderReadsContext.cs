@@ -13,6 +13,7 @@ public class GooderReadsContext : DbContext
 
 public class BooksQuery
 {
+    [UseProjection]
     public IQueryable<Book> GetUsers(GooderReadsContext dbContext)
         => dbContext.Books;
 }

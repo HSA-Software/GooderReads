@@ -12,6 +12,7 @@ builder.AddSqlServerDbContext<GooderReadsContext>("GooderReadsSQL");
 
 builder.Services
     .AddGraphQLServer()
+    .AddProjections()
     .RegisterDbContext<GooderReadsContext>()
     .AddQueryType<BooksQuery>()
     .AddMutationType<BooksMutation>();
