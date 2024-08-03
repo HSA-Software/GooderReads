@@ -1,5 +1,6 @@
 using GooderReads.ApiService;
 using GooderReads.ApiService.Mutations;
+using GooderReads.ApiService.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,9 @@ builder.AddNpgsqlDbContext<GooderReadsContext>("GooderReadsSQL");
 builder.Services
     .AddGraphQLServer()
     .AddProjections()
+    .AddFiltering()
+    .AddQueryableCursorPagingProvider()
+    .AddSorting()
     .RegisterDbContext<GooderReadsContext>()
     .AddQueryType<BooksQuery>()
     .AddMutationType<BooksMutation>();
