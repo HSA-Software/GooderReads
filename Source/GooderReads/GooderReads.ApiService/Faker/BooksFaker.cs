@@ -1,10 +1,10 @@
 ﻿using Bogus;
 
-namespace GooderReads.ApiService.FakeDatabase;
+namespace GooderReads.ApiService.Faker;
 
-public class FakeBooks
+public class BooksFaker
 {
-    public FakeBooks()
+    public BooksFaker()
     {
         Randomizer.Seed = new Random(8675309);
     }
@@ -18,8 +18,8 @@ public class FakeBooks
         var bookFaker = new Faker<Book>()
             .UseSeed(54321)
             .RuleFor(b => b.Author, f => authorFaker.Generate())
-            .RuleFor(b => b.Title, f => f.Lorem.Sentence(4))
-            .RuleFor(b => b.Summary, f => f.Lorem.Sentences(5));
+            .RuleFor(b => b.Title, f => f.Hacker.Phrase())
+            .RuleFor(b => b.Summary, f => f.Lorem.Paragraph(5));
 
         var books = new List<Book>();
 
