@@ -10,10 +10,3 @@ public class GooderReadsContext : DbContext
 
     public DbSet<Book> Books { get; set; }
 }
-
-public class BooksQuery
-{
-    [UseProjection]
-    public IQueryable<Book> GetUsers(GooderReadsContext dbContext)
-        => dbContext.Books;
-}

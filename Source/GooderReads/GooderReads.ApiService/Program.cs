@@ -1,6 +1,6 @@
 using GooderReads.ApiService;
-using GooderReads.ApiService.FakeDatabase;
 using GooderReads.ApiService.Mutations;
+using GooderReads.ApiService.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +14,9 @@ builder.AddNpgsqlDbContext<GooderReadsContext>("GooderReadsSQL");
 builder.Services
     .AddGraphQLServer()
     .AddProjections()
+    .AddFiltering()
+    .AddQueryableCursorPagingProvider()
+    .AddSorting()
     .RegisterDbContext<GooderReadsContext>()
     .AddQueryType<BooksQuery>()
     .AddMutationType<BooksMutation>();
@@ -41,13 +44,6 @@ app.MapGet("/weatherforecast", () =>
         ))
         .ToArray();
     return forecast;
-});
-
-app.MapGet("/books/fake", () => 
-{
-    var books = FakeBooks.GenerateBooks(100);
-
-    return books;
 });
 
 app.MapGraphQL();
