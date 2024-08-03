@@ -9,7 +9,7 @@ builder.AddServiceDefaults();
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
-builder.AddSqlServerDbContext<GooderReadsContext>("GooderReadsSQL");
+builder.AddNpgsqlDbContext<GooderReadsContext>("GooderReadsSQL");
 
 builder.Services
     .AddGraphQLServer()
