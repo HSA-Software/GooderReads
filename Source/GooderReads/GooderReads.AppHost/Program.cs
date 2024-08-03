@@ -1,9 +1,9 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var sql = builder.AddSqlServer("sql")
-    .WithDataVolume();
+var sql = builder.AddPostgres("sql")
+    .WithDataVolume()
+    .WithPgAdmin();
 var sqldb = sql.AddDatabase("GooderReadsSQL");
-
 
 var cache = builder.AddRedis("cache");
 
